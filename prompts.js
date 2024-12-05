@@ -31,6 +31,7 @@ const promptList = [
     "Jerry xkcd comic",
     "Axo & Bee Flirting",
     "\"I'm hungry, Hi hungry\" joke",
+    "Usaken acting \"evil\"",
     
     
 ];
