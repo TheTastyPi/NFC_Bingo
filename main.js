@@ -2,6 +2,7 @@ var board = [];
 var boardActive = Array(25).fill(false);
 var boardDisp = [];
 var boardDispText = [];
+var theme = "nwero";
 
 function randomizeBoard() {
     board = [...promptList];
@@ -77,11 +78,12 @@ function saveBoard() {
     localStorage.setItem("NFC_Bingo_Board", str);
     str = JSON.stringify(boardActive);
     localStorage.setItem("NFC_Bingo_Board_Active", str);
+    localStorage.setItem("NFC_Bingo_Board_Theme", theme);
 }
 
 function loadBoard() {
-    if (localStorage.getItem("NFC_Bingo_Board")) {
-        let str = localStorage.getItem("NFC_Bingo_Board");
+    let str = localStorage.getItem("NFC_Bingo_Board");
+    if (str) {
         board = JSON.parse(str);
         str = localStorage.getItem("NFC_Bingo_Board_Active");
         boardActive = JSON.parse(str);
@@ -94,19 +96,28 @@ function loadBoard() {
         randomizeBoard();
         saveBoard();
     }
+    str = localStorage.getItem("NFC_Bingo_Board_Theme")
+    if (str) {
+        theme = str;
+        updateTheme(false);
+    }
+}
+
+function updateTheme(fade = true) {
+    let stylesheet = document.getElementById("styleTheme");
+    stylesheet.setAttribute("href", `style/${theme}.css`);
+    if (fade) {
+        document.body.classList.add("themeTransition");
+        setTimeout(function() {
+            document.body.classList.remove("themeTransition");
+        }, 500);
+    }
+    saveBoard();
 }
 
 function toggleTheme() {
-    let stylesheet = document.getElementById("styleTheme");
-    document.body.classList.add("themeTransition");
-    if (stylesheet.getAttribute("href") == "style/nwero.css") {
-        stylesheet.setAttribute("href", "style/eliv.css");
-    } else {
-        stylesheet.setAttribute("href", "style/nwero.css");
-    }
-    setTimeout(function() {
-        document.body.classList.remove("themeTransition");
-    }, 500);
+    theme = theme == "nwero" ? "eliv" : "nwero";
+    updateTheme();
 }
 
 function randomInt(n) {
