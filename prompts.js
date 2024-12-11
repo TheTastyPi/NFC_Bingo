@@ -6,15 +6,12 @@ const promptList = [
     "Meowz friend gc",
     "Cute Usaken",
     "Cannibalism mention",
-    "Jerry with DnD",
     "Phobi appears & leaves",
     "Vovgus & Phobi flirting",
     "\"I miss my wife\"",
-    "Shrimp insults Cris",
     "Narwhal karaoke",
     "Shad dropping wisdom",
     "Jocose being a cute bf",
-    "Random Terra gif",
     "Move to #silliness",
     "Ddouble being old",
     "Actually wholesome",
@@ -26,9 +23,9 @@ const promptList = [
     "Anonum mentions Project Moon",
     "\"Grumble\"",
     "\"I love my wife\"",
-    "Anonum with science/math",
     "Jerry Six Simp",
     "Jerry xkcd comic",
+    "Jerry with DnD",
     "Axo & Bee Flirting",
     "\"I'm hungry, Hi hungry\" joke",
     "Usaken acting \"evil\"",
@@ -37,5 +34,5 @@ const promptList = [
 ];
 const freeList = [
     "Therapy",
-    "Jocussy"
+    "Jocussy",
 ];
