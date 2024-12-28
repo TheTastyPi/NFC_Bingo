@@ -42,6 +42,57 @@ function updateActive() {
     }
 }
 
+function checkCompletedRow(index) {
+    let valid = true;
+    let rowStart = index - (index % 5);
+    for (let i = 0; i < 5; i++) {
+        if (!boardActive[rowStart+i]){
+            valid = false;
+            break;
+        }
+    }
+    if (valid) flashTiles(rowStart, 5, 1);
+
+    valid = true;
+    let colStart = index % 5;
+    for (let i = 0; i < 5; i++) {
+        if (!boardActive[colStart+5*i]){
+            valid = false;
+            break;
+        }
+    }
+    if (valid) flashTiles(colStart, 5, 5);
+
+    if (rowStart/5 == colStart) {
+        valid = true;
+        for (let i = 0; i < 5; i++) {
+            if (!boardActive[6*i]){
+                valid = false;
+                break;
+            }
+        }
+        if (valid) flashTiles(0, 5, 6);
+    }
+
+    if (rowStart/5 == 4-colStart) {
+        valid = true;
+        for (let i = 1; i < 6; i++) {
+            if (!boardActive[4*i]){
+                valid = false;
+                break;
+            }
+        }
+        if (valid) flashTiles(4, 5, 4);
+    }
+}
+
+function toggleSquare(index) {
+    boardActive[index] = !boardActive[index];
+    updateActive();
+    saveBoard();
+    checkCompletedRow(index);
+}
+
 function setupBoardDisplay() {
     for (let i = 0; i < 25; i++) {
         boardDisp[i] = document.createElement("div");
@@ -53,9 +104,7 @@ function setupBoardDisplay() {
         boardDispText[i].className = "bingoText";
 
         boardDisp[i].addEventListener("click", function() {
-            boardActive[i] = !boardActive[i];
-            updateActive();
-            saveBoard();
+            toggleSquare(i);
         });
     }
 }
@@ -118,6 +167,22 @@ function updateTheme(fade = true) {
 function toggleTheme() {
     theme = theme == "nwero" ? "eliv" : "nwero";
     updateTheme();
+}
+
+function flashTile(index) {
+    if (boardDisp[index].classList.contains("flashAnim")) return;
+    boardDisp[index].classList.add("flashAnim");
+    setTimeout(function(){
+        boardDisp[index].classList.remove("flashAnim");
+    }, 1000);
+}
+
+function flashTiles(index, toFlash, offset) {
+    flashTile(index);
+    let nextIndex = index + offset;
+    if (nextIndex > board.length) return;
+    if (toFlash == 1) return; 
+    setTimeout(flashTiles, 200, nextIndex, toFlash-1, offset);
 }
 
 function randomInt(n) {

@@ -55,6 +55,10 @@ h1 {
     transition: all 0.5s;
 }
 
+.flashAnim {
+    animation: flash ease-out 1s 1;
+}
+
 @font-face {
     font-family: "First Coffee";
     src: url("../font/First Coffee.otf") format("otf"),

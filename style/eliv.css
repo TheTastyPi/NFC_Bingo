@@ -28,3 +28,9 @@ h1 {
 #themeToggleBtn {
     background-image: url("../img/eliv.png");
 }
+
+@keyframes flash {
+    from {
+        background-color: #952D33;
+    }
+}

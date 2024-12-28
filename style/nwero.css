@@ -28,3 +28,9 @@ h1 {
 #themeToggleBtn {
     background-image: url("../img/nwero.png");
 }
+
+@keyframes flash {
+    from {
+        background-color: #FDAAAF;
+    }
+}

@@ -36,5 +36,5 @@ const promptList = [
 ];
 const freeList = [
     "Therapy",
-    "Jocussy"
+    "Jocose getting milk"
 ];
