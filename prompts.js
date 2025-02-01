@@ -2,16 +2,16 @@ const promptList = [
     "Shibou's metal music",
     "Lurker appears",
     "TastyPi maths",
-    "Edgy Jocose",
+    //"Edgy Jocose",
     "Meowz friend gc",
     "Cute Usaken",
     "Cannibalism mention",
     "Phobi appears & leaves",
-    "Vovgus & Phobi flirting",
+    //"Vovgus & Phobi flirting",
     "\"I miss my wife\"",
     "Narwhal karaoke",
     "Shad dropping wisdom",
-    "Jocose being a cute bf",
+    //"Jocose being a cute bf",
     "Move to #silliness",
     "Ddouble being old",
     "Actually wholesome",
@@ -30,10 +30,11 @@ const promptList = [
     "\"I'm hungry, Hi hungry\" joke",
     "Usaken acting \"evil\"",
     "Axo dirty minded",
-    
-    
+    "Therapy",
 ];
 const freeList = [
-    "Therapy",
-    "Jocose getting milk"
+    "Jocose getting milk",
+    "Liam / Ellie moment",
+    "Anonum backreading",
+    "Paige abuse/down",
 ];
