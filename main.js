@@ -111,6 +111,7 @@ function setupBoardDisplay() {
 
 function clearBoard() {
     boardActive = Array(25).fill(false);
+    boardActive[12] = true;
     displayBoard();
     saveBoard();
 }
