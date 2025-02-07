@@ -9,7 +9,7 @@ const promptList = [
     "Phobi appears & leaves",
     //"Vovgus & Phobi flirting",
     "\"I miss my wife\"",
-    "Narwhal karaoke",
+    //"Narwhal karaoke",
     "Shad dropping wisdom",
     //"Jocose being a cute bf",
     "Move to #silliness",
@@ -31,6 +31,7 @@ const promptList = [
     "Usaken acting \"evil\"",
     "Axo dirty minded",
     "Therapy",
+    "Ember brainrot",
 ];
 const freeList = [
     "Jocose getting milk",
