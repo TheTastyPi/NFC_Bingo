@@ -32,6 +32,8 @@ const promptList = [
     "Axo dirty minded",
     "Therapy",
     "Ember brainrot",
+    "Ava pings beta readers",
+    "Bee overreacting",
 ];
 const freeList = [
     "Jocose getting milk",
