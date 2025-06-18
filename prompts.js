@@ -11,7 +11,6 @@ const promptList = [
     "Convoluted Time Travel",
     "Wholesome No Angst",
     "Therapy",
-    "NFC Member Appears",
     "Mature Fic",
     "Zoomer Lingo",
     "Obvious Author",
