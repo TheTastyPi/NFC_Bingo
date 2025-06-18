@@ -31,6 +31,7 @@ const promptList = [
     "NFC Server Reference",
     "Dreams",
     "Monologuing",
+    "Obscure but Approved Tags"
 ];
 const freeList = [
     "Angst",
