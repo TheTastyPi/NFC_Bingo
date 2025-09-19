@@ -31,5 +31,5 @@ const promptList = [
 ];
 const freeList = [
     "Angst",
-    "Is Neuroverse :NOWAYING:"
+    "Is Neuroverse NOWAYING"
 ];
