@@ -1,8 +1,10 @@
 var board = [];
 var boardActive = Array(25).fill(false);
+boardActive[12] = true;
 var boardDisp = [];
 var boardDispText = [];
 var theme = "nwero";
+const contestID = 5;
 
 function randomizeBoard() {
     board = [...promptList];
@@ -129,11 +131,13 @@ function saveBoard() {
     str = JSON.stringify(boardActive);
     localStorage.setItem("NFC_Bingo_Board_Active", str);
     localStorage.setItem("NFC_Bingo_Board_Theme", theme);
+    localStorage.setItem("NFC_Bingo_ContestID", contestID);
 }
 
 function loadBoard() {
     let str = localStorage.getItem("NFC_Bingo_Board");
-    if (str) {
+    let storedID = localStorage.getItem("NFC_Bingo_ContestID");
+    if (str && storedID && storedID == contestID) {
         board = JSON.parse(str);
         str = localStorage.getItem("NFC_Bingo_Board_Active");
         boardActive = JSON.parse(str);
@@ -146,7 +150,7 @@ function loadBoard() {
         randomizeBoard();
         saveBoard();
     }
-    str = localStorage.getItem("NFC_Bingo_Board_Theme")
+    str = localStorage.getItem("NFC_Bingo_Board_Theme");
     if (str) {
         theme = str;
         updateTheme(false);
@@ -183,7 +187,7 @@ function flashTiles(index, toFlash, offset) {
     let nextIndex = index + offset;
     if (nextIndex > board.length) return;
     if (toFlash == 1) return; 
-    setTimeout(flashTiles, 200, nextIndex, toFlash-1, offset);
+    setTimeout(flashTiles, 66, nextIndex, toFlash-1, offset);
 }
 
 function randomInt(n) {
